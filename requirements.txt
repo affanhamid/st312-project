@@ -1,0 +1,21 @@
+# Core Data Science Libraries
+pandas>=2.3.0
+numpy>=1.26.0
+matplotlib>=3.9.0
+seaborn>=0.13.0
+scipy>=1.15.0
+
+# Formula 1 Data
+fastf1>=3.7.0
+
+# Statistical Modeling (for future analysis beyond EDA)
+statsmodels>=0.14.0
+scikit-learn>=1.5.0
+
+# Jupyter Notebook
+jupyter>=1.1.0
+ipykernel>=6.29.0
+
+# Utility Libraries
+requests>=2.32.0
+python-dateutil>=2.9.0
