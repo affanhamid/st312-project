@@ -3,7 +3,7 @@ Candidate Numbers: 60276, 61881
 
 Title: Understanding Performance Dynamics in Modern Formula 1
 
-Topic: Analysing the relationship between qualifying performance and race outcomes, intra-team competitive dynamics, and strategic tyre management using data from 2018 to 2024 from the datasource FastF1. 
+Topic: Analysing the relationship between qualifying performance and race outcomes, intra-team competitive dynamics, and strategic tyre management using data from 2018 to 2024 from the datasource FastF1.
 
 Research Question 1: Qualifying-Race Performance Correlation
 “What is the relationship between qualifying session performance metrics and final race standings across different circuits, seasons, and regulatory eras?”
@@ -18,27 +18,27 @@ Research Question 3*: Tyre Strategy Optimisation
 General Background & Context:
 
 Data:
-Formula 1 represents one of the most data-rich environments in modern sport, with cars generating 50-100 measurements per second during race weekends. FastF1 (https://docs.fastf1.dev/) is a very comprehensive dataset and easily accessible, which is why we chose it. It uses official FIA (Fédération Internationale de l'Automobile) data from FIA timing transponders on each car, which are broadcast in real-time and then archived in the FastF1 database, which lends credibility to the accuracy of the data. The data is also very granular, as it is collected for each completed lap for each driver in each practice, qualifying, and final race. For its sampling frame, it has info on all F1 races from 2018 to the current time, however for consistency purposes we only intend to use the data from 2018-2024. Each year has 24 final races, though due to COVID, 2020 only had 17, and each race has 20 drivers (2 drivers for each of the 10 teams), about 50-70 laps per race depending on the circuit length, which means for rough calculations, 7 years x 24 races x 20 drivers x 60 laps = 201,600 lap observations or data points. This doesn’t include the practice or qualifiers (for each final race, three qualifying races are conducted from which the five slowest drivers are knocked out in each qualifying round), even though data is collected for those as well. This means that there is a lot of data for analysis, even though we may have to discount some data due to crashes, disqualifications, or sensor failures, etc. 
+Formula 1 represents one of the most data-rich environments in modern sport, with cars generating 50-100 measurements per second during race weekends. FastF1 (https://docs.fastf1.dev/) is a very comprehensive dataset and easily accessible, which is why we chose it. It uses official FIA (Fédération Internationale de l'Automobile) data from FIA timing transponders on each car, which are broadcast in real-time and then archived in the FastF1 database, which lends credibility to the accuracy of the data. The data is also very granular, as it is collected for each completed lap for each driver in each practice, qualifying, and final race. For its sampling frame, it has info on all F1 races from 2018 to the current time, however for consistency purposes we only intend to use the data from 2018-2024. Each year has 24 final races, though due to COVID, 2020 only had 17, and each race has 20 drivers (2 drivers for each of the 10 teams), about 50-70 laps per race depending on the circuit length, which means for rough calculations, 7 years x 24 races x 20 drivers x 60 laps = 201,600 lap observations or data points. This doesn’t include the practice or qualifiers (for each final race, three qualifying races are conducted from which the five slowest drivers are knocked out in each qualifying round), even though data is collected for those as well. This means that there is a lot of data for analysis, even though we may have to discount some data due to crashes, disqualifications, or sensor failures, etc.
 Key data available:
 Lap timing: LapTime, Sector1/2/3 times, TrackStatus flags, personal bests
 Car telemetry: Speed, Throttle (0-100%), Brake (boolean), nGear, RPM, DRS
 Tyre data: Compound (SOFT/MEDIUM/HARD/INTERMEDIATE/WET), TyreLife, FreshTyre flag
 Position data: X/Y coordinates, can be used for spatial analysis
 Weather: Temperature, humidity, wind conditions per session
-	The specific data we intend to use for each question will be detailed out in the “our approach” section. 
+	The specific data we intend to use for each question will be detailed out in the “our approach” section.
 
 Research Importance:
 Our research addresses fundamental questions in F1 strategy and performance analysis such as:
 Team Resource Allocation
 To understand the qualifying-race correlation, which can inform how teams balance qualifying and final race development priorities.
-Qualifying determines grid position which is widely believed to be the strongest predictor of race results. 
-Understanding this relationship helps teams decide resource allocation between qualifying and final race setups. 
+Qualifying determines grid position which is widely believed to be the strongest predictor of race results.
+Understanding this relationship helps teams decide resource allocation between qualifying and final race setups.
 Strategically, if correlation is extremely strong, teams should prioritise qualifying pace however, if weaker, race strategies become more important.
-Competitive Fairness: 
+Competitive Fairness:
 To examine within-team dynamics to provide evidence for whether systematic favouritism exists in resource allocation between teammates.
 F1 teams field two drivers but have limited resources (wind tunnel time, simulation hours, upgrade parts). Public perception exists that teams favour championship contenders over supporting drivers.
 To figure out if observed performance between teammates differs due to driver skill or systematic resource allocation?
-Strategic Optimisation: 
+Strategic Optimisation:
 To analyse the tyre strategy effects for which optimal decision-making frameworks for one of the few variables teams can control during races, unlike car performance or driver skill.
 Different tyre compounds (C1-C5, soft/medium/hard) have trade-offs: softer compounds are faster but degrade quickly.
 Given circuit characteristics and driver style, which tyre strategy minimises race time?
@@ -66,10 +66,10 @@ Research on tyre strategy has primarily focused on optimisation through game the
 Recent machine learning applications have increasingly leveraged the FastF1 dataset for prediction tasks. Sasikumar et al. (2025) trained Bi-LSTM networks on 99,928 laps from 2020-2024 to predict pit stop timing with an F1-score of 0.81, while a Tilburg University thesis (2024) used LSTM networks for lap time prediction on 136,122 laps. Thomas et al. (2025) collaborated with Mercedes-AMG Petronas to develop reinforcement learning algorithms for race strategy optimisation, achieving improved average finishing positions compared to baseline strategies.
 However, most existing analyses rely on aggregate race results or focus on prediction accuracy rather than causal inference about strategy effects. The 2023-2024 ground effect era remains largely unstudied, and no research has systematically examined how different driving styles affect optimal tyre management strategies or estimated driver-specific degradation rates using empirical telemetry data, representing key gaps our project will address.
 
-	So even though F1 is a subject that is commonly explored in statistical analyses, by using a different dataset and altering our approaches, there is no exact replication of any previous studies, though we add to some. This means that some of our results will be really novel, while others may be reinforced by existing literature. 
-	
+	So even though F1 is a subject that is commonly explored in statistical analyses, by using a different dataset and altering our approaches, there is no exact replication of any previous studies, though we add to some. This means that some of our results will be really novel, while others may be reinforced by existing literature.
+
 Our Planned Approach
-	This is the approach we have planned so far, broken down for each question. However, it is entirely possible that once we start investigating the data further and on a deeper level, some other natural questions may emerge or we may realise some other model or stats analysis is better suited, so we’re allowing space for flexibility and adaptability in our approach. 
+	This is the approach we have planned so far, broken down for each question. However, it is entirely possible that once we start investigating the data further and on a deeper level, some other natural questions may emerge or we may realise some other model or stats analysis is better suited, so we’re allowing space for flexibility and adaptability in our approach.
 
 Research Question 1: Qualifying-Race Performance Correlation
 We will use ordinal logistic regression with a multilevel structure to examine the relationship between qualifying position and race finishing position. This approach makes sense because race positions are ordered categories (1st, 2nd, 3rd, etc.) rather than continuous numbers. We will include random effects for drivers and teams to account for the fact that we have multiple observations from the same drivers and teams over the seasons.
@@ -98,3 +98,4 @@ Sasikumar, A., et al. (2025). Deep learning for pit stop prediction using FastF1
 Thomas, S., et al. (2025). Reinforcement learning for Formula 1 race strategy. arXiv:2501.04068.
 Van Kesteren, E., & Bergkamp, T. (2023). Bayesian multilevel models for Formula 1. Journal of Quantitative Analysis in Sports.
 Weissbock, J., & Mills, S. (2025). Evaluating the Predictive Power of Qualifying Performance in Formula One Grand Prix. arXiv:2507.10966. https://arxiv.org/abs/2507.10966
+
