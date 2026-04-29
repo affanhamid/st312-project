@@ -1,0 +1,31 @@
+Year,Era,Round,EventName,CircuitType,Driver,Lag1_Autocorr
+2018,Pre-2022,1,Australian Grand Prix,Street,VER,0.839
+2018,Pre-2022,4,Azerbaijan Grand Prix,Street,VER,0.646
+2018,Pre-2022,6,Monaco Grand Prix,Street,VER,0.922
+2018,Pre-2022,7,Canadian Grand Prix,Street,VER,0.823
+2018,Pre-2022,15,Singapore Grand Prix,Street,VER,0.78
+2018,Pre-2022,9,Austrian Grand Prix,HighSpeed,VER,0.949
+2018,Pre-2022,10,British Grand Prix,HighSpeed,VER,0.294
+2018,Pre-2022,13,Belgian Grand Prix,HighSpeed,VER,0.853
+2018,Pre-2022,14,Italian Grand Prix,HighSpeed,VER,0.728
+2018,Pre-2022,17,Japanese Grand Prix,HighSpeed,VER,0.48
+2018,Pre-2022,2,Bahrain Grand Prix,Technical,VER,-0.167
+2018,Pre-2022,3,Chinese Grand Prix,Technical,VER,0.824
+2018,Pre-2022,5,Spanish Grand Prix,Technical,VER,0.938
+2018,Pre-2022,8,French Grand Prix,Technical,VER,0.8
+2018,Pre-2022,11,German Grand Prix,Technical,VER,0.884
+2022,Post-2022,3,Australian Grand Prix,Street,VER,0.717
+2022,Post-2022,5,Miami Grand Prix,Street,VER,0.754
+2022,Post-2022,7,Monaco Grand Prix,Street,VER,0.737
+2022,Post-2022,8,Azerbaijan Grand Prix,Street,VER,0.885
+2022,Post-2022,9,Canadian Grand Prix,Street,VER,0.85
+2022,Post-2022,2,Saudi Arabian Grand Prix,HighSpeed,VER,0.844
+2022,Post-2022,10,British Grand Prix,HighSpeed,VER,0.905
+2022,Post-2022,11,Austrian Grand Prix,HighSpeed,VER,0.81
+2022,Post-2022,14,Belgian Grand Prix,HighSpeed,VER,0.886
+2022,Post-2022,16,Italian Grand Prix,HighSpeed,VER,0.767
+2022,Post-2022,1,Bahrain Grand Prix,Technical,VER,0.035
+2022,Post-2022,4,Emilia Romagna Grand Prix,Technical,VER,
+2022,Post-2022,6,Spanish Grand Prix,Technical,VER,0.887
+2022,Post-2022,12,French Grand Prix,Technical,VER,0.696
+2022,Post-2022,13,Hungarian Grand Prix,Technical,VER,0.92
