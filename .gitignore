@@ -1,5 +1,6 @@
 # F1 data cache
 f1_cache/
+fastf1_cache/
 
 # Python
 __pycache__/
