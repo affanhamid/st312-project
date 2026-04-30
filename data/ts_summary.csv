@@ -1,7 +1,7 @@
 Era,CircuitType,mean,std,count
-Post-2022,HighSpeed,0.842,0.056,5
-Post-2022,Street,0.789,0.074,5
-Post-2022,Technical,0.635,0.412,4
-Pre-2022,HighSpeed,0.661,0.27,5
-Pre-2022,Street,0.802,0.101,5
-Pre-2022,Technical,0.656,0.463,5
+Post-2022,HighSpeed,0.811,0.128,92
+Post-2022,Street,0.832,0.137,95
+Post-2022,Technical,0.733,0.205,96
+Pre-2022,HighSpeed,0.802,0.187,88
+Pre-2022,Street,0.826,0.189,90
+Pre-2022,Technical,0.833,0.139,93

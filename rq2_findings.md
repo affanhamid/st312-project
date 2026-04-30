@@ -1,5 +1,30 @@
 # RQ2: Intra-Team Performance Dynamics — Key Findings (2024 Season)
 
+## Variables
+
+| Variable | Type | Description |
+|----------|------|-------------|
+| **Year** | integer | Race season (2018–2025). |
+| **Race** | categorical | Grand Prix name (e.g. *Monaco*, *Italian*). |
+| **RaceID** | categorical | Unique race identifier combining year and event (e.g. *2024_Monaco Grand Prix*). |
+| **Team** | categorical | Constructor team (e.g. *Mercedes*, *Ferrari*, *Red Bull Racing*). |
+| **Driver** | categorical | Three-letter driver code (e.g. *HAM*, *VER*, *NOR*). |
+| **LapTime** | numeric | Lap time in seconds. |
+| **LapNumber** | integer | Lap index within the race (1–N). |
+| **Stint** | integer | Stint number for the driver (increments after each pit stop). |
+| **Compound** | categorical | Tyre compound used on the lap: *Soft*, *Medium*, *Hard*, *Intermediate*, *Wet*. |
+| **TyreLife** | integer | Number of laps the current tyre has run since being fitted. |
+| **TrackStatus** | categorical | Track status flag for the lap (*1* = green, *2* = yellow, *4* = safety car, etc.). |
+| **PitInTime** / **PitOutTime** | timedelta | Time of pit lane entry / exit (used to flag in/out laps). |
+| **PitDuration** | numeric | Stationary pit-stop duration in seconds (from `all_pit_stops.parquet`). |
+| **OldCompound** / **NewCompound** | categorical | Tyre compound fitted before and after a pit stop. |
+| **Q1** / **Q2** / **Q3** | numeric | Fastest lap time (seconds) in each qualifying segment. |
+| **best_quali** | numeric | Driver's fastest qualifying lap across Q1/Q2/Q3 (seconds). |
+| **Sector1Time** / **Sector2Time** / **Sector3Time** | numeric | Per-sector lap times in seconds (from `sector_data.parquet`). |
+| **lineup_id** | categorical | Teammate-pairing identifier within a team-season (e.g. *Mercedes_2024_HAM_RUS*). |
+| **Driver1** / **Driver2** | categorical | Alphabetically-first / second teammate in a lineup; sets the reference for the comparison. |
+| **IsDriver2** | integer (0/1) | Indicator that a lap belongs to Driver 2 — the teammate effect estimated by the mixed model. |
+
 ## Analysis 1: Lap Time Gaps (Linear Mixed Effects Model)
 
 - The overall mixed effects model finds **no significant systematic lap time bias** between teammates after controlling for tyre compound, tyre life, stint, and position (is_driver1 coefficient = -0.014s, p = 0.699)
